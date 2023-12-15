@@ -10,10 +10,11 @@ export function hideLoadingAnimation() {
 }
 
 // debounce.js
-export function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func(...args), wait);
-    };
+function debounce(callback, delay) {
+  let timeoutID;
+  return function (...args) {
+    clearTimeout(timeoutID);
+    timeoutID = setTimeout(() => callback.apply(this, args), delay);
+  };
 }
+
