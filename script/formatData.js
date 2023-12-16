@@ -30,6 +30,8 @@ export function formatTable(table) {
 
 export function formatCut(cut) {
     switch (cut) {
+        case '':
+            return 'Excellent';
         case 'F':
             return 'Fair';
         case 'GD':
